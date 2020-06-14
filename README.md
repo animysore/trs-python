@@ -1,5 +1,8 @@
 # TRS Python
 
+![screenshot]('https://github.com/animysore/trs-python/screenshot.gif')
+
+
 Python port of [TRS: Teaching/Learning Robotics with a Simulator](https://github.com/ULgRobotics/trs) by Renaud Detry.
 
 TRS is an open-source recipe that provides a template for starting a robotics project using VREP/CoppeliaSim using Python bindings. It is a port of the original recipe for MATLAB.  
@@ -22,10 +25,10 @@ Please check the [TRS website](http://ulgrobotics.github.io/trs/) for more infor
    ```
 
 3. Open the simulator and load the default scene - `scenes/house.ttt`.
-4. Run any of the examples in the `focused` directory.
+4. Run the example.
 
     ```bash
-       cd focused
-       python youbot_arm.py
+    python youbot.py
     ```
- 
+
+Examples showing a single task - such as moving the robot, controlling arm, taking a picture, etc.  are included in the `focused` directory.
