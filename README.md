@@ -1,6 +1,6 @@
 # TRS Python
 
-![screenshot]('https://github.com/animysore/trs-python/raw/master/screenshot.gif')
+![screenshot](https://github.com/animysore/trs-python/raw/master/screenshot.gif)
 
 
 Python port of [TRS: Teaching/Learning Robotics with a Simulator](https://github.com/ULgRobotics/trs) by Renaud Detry.
