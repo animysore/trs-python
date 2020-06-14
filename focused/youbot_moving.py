@@ -7,7 +7,7 @@ import configparser
 # Python disallows relative imports from non-packages, so we add parent directory to Path
 sys.path.insert(1, os.path.join(sys.path[0], '..')) 
 
-# Read Cond 
+# Read config and load VREP paths 
 cfg = configparser.ConfigParser()
 cfg.read('../config.ini')
 
@@ -16,8 +16,8 @@ os.environ['VREP_LIBRARY'] = cfg['Simulator']['VREP_LIBRARY']
 
 # Import VREP api and TRS classes 
 from api import vrep
-from source.Youbot import Youbot
-from source.utils import angdiff, cleanup_vrep
+from trs.Youbot import Youbot
+from trs.utils import cleanup_vrep
 
 """
   The aim of this code is to show small examples of controlling the displacement of the robot in V-REP. 
@@ -129,10 +129,10 @@ def youbot():
       # and the robot will correctly find its way back (e.g.: the angular speed is positive, the robot overshoots, 
       # the anguler speed becomes negative). 
       # youbotEuler(3) is the rotation around the vertical axis. 
-      rotateRightVel = angdiff(- math.pi / 2, youbotEuler[2] ) # angdiff ensures the difference is between -pi and pi. 
+      rotateRightVel = - math.pi / 2 - youbotEuler[2] # angdiff ensures the difference is between -pi and pi. 
       
       # Stop when the robot is at an angle close to -pi/2. 
-      if abs(angdiff(- math.pi / 2, youbotEuler[2])) < .002:
+      if abs(- math.pi / 2- youbotEuler[2]) < .002:
         rotateRightVel = 0
         fsm = 'finished'
         print('Switching to state: ', fsm)

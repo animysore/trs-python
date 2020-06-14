@@ -25,6 +25,7 @@ Please check the [TRS website](http://ulgrobotics.github.io/trs/) for more infor
 4. Run any of the examples in the `focused` directory.
 
     ```bash
-    python focused/youbot_arms.py
+       cd focused
+       python youbot_arm.py
     ```
  

@@ -7,7 +7,7 @@ import configparser
 # Python disallows relative imports from non-packages, so we add parent directory to Path
 sys.path.insert(1, os.path.join(sys.path[0], '..')) 
 
-# Read Cond 
+# Read config and load VREP paths 
 cfg = configparser.ConfigParser()
 cfg.read('../config.ini')
 
@@ -16,8 +16,8 @@ os.environ['VREP_LIBRARY'] = cfg['Simulator']['VREP_LIBRARY']
 
 # Import VREP api and TRS classes 
 from api import vrep
-from source.Youbot import Youbot
-from source.utils import angdiff, cleanup_vrep
+from trs.Youbot import Youbot
+from trs.utils import cleanup_vrep
 
 """
   The aim of this code is to show small examples of controlling the arm of the robot in V-REP. 

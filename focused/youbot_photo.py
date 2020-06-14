@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Python disallows relative imports from non-packages, so we add parent directory to Path
 sys.path.insert(1, os.path.join(sys.path[0], '..')) 
 
-# Read Cond 
+# Read config and load VREP paths 
 cfg = configparser.ConfigParser()
 cfg.read('../config.ini')
 
@@ -18,8 +18,8 @@ os.environ['VREP_LIBRARY'] = cfg['Simulator']['VREP_LIBRARY']
 
 # Import VREP api and TRS classes 
 from api import vrep
-from source.Youbot import Youbot
-from source.utils import angdiff, cleanup_vrep
+from trs.Youbot import Youbot
+from trs.utils import cleanup_vrep
 
 """
   Illustrates the V-REP MATLAB bindings, more specifically the way to take a 3D point cloud.
@@ -79,7 +79,7 @@ def youbot():
   width, height = resolution
   print('Captured {} pixels ({} x {}).'.format(width * height, width, height))
 
-  image = np.reshape(image, (height, width, 3) )
+  image = (np.reshape(image, (height, width, 3) ) + 255 ) % 255 # Returns in range [-128, 127]. Matplotlib requires [0, 255]
   
   # Finally, show the image.
   plt.imshow(image)

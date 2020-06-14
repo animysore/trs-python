@@ -10,11 +10,6 @@ def homtrans(T:np.ndarray, p: np.ndarray) -> np.ndarray:
 
   return eucRes
 
-def angdiff(source, target) -> float:
-  a = target - source
-  a = (a + 180) % 360 - 180
-  return a
-
 def cleanup_vrep(vrep, id):
   print('Closing connection :', id)
   vrep.simxStopSimulation(id, vrep.simx_opmode_oneshot_wait)
