@@ -9,7 +9,7 @@ TRS is an open-source recipe that provides a template for starting a robotics pr
 
 Please check the [TRS website](http://ulgrobotics.github.io/trs/) for more information about what is provided.
 
-**Note** - This is a work in progress.
+The paper summarizing this work has been presented at the Soft Computing Applications Conference, Arad - Romania, Nov 27 2020. 
 
 ## Setup
 
